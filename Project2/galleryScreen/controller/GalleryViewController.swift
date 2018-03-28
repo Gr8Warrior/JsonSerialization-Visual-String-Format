@@ -10,13 +10,24 @@ import UIKit
 
 class GalleryViewController: UIViewController {
 
+  var iconImageView: UIImageView?
     override func viewDidLoad() {
         super.viewDidLoad()
 
       view.backgroundColor = UIColor.yellow
+      loadIconImage()
         // Do any additional setup after loading the view.
     }
-
+  
+  func loadIconImage() {
+    let image = UIImage(named: "gallery") // default extension for image is PNG
+    iconImageView = UIImageView(image: image)
+    //    iconImageView?.frame.origin.x = 90
+    //    iconImageView?.frame.origin.y = 190
+    iconImageView?.center = CGPoint(x: 100, y: 200)// iphone 45 320 *568
+    self.view.addSubview(iconImageView!)
+    
+  }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
