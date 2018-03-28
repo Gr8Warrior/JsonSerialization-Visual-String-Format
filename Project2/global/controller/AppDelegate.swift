@@ -12,6 +12,39 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
   var window: UIWindow?
+  var baseController: UITabBarController?
+  
+  func createTabs() {
+    
+    var tabControllers: [UIViewController] = []
+    
+    //... is full range or ..> or ..< is half range
+    for i in 0..<3 {
+      
+      var tabController: UIViewController!
+      
+      switch i {
+        
+      case 0:
+        tabController = ViewController()
+        tabController.tabBarItem.image = UIImage(named: "home")
+        tabController.tabBarItem.title = "Home"
+        
+      case 1:
+        tabController = GalleryViewController()
+        tabController.tabBarItem.image = UIImage(named: "gallery")
+        tabController.tabBarItem.title = "Gallery"
+        
+      case 2:
+        tabController = AppsViewController()
+        tabController.tabBarItem.image = UIImage(named: "apps")
+        tabController.tabBarItem.title = "Apps"
+        
+      default:
+        tabController = nil
+      }
+    }
+  }
 
 
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
