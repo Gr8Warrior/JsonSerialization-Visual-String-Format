@@ -43,12 +43,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       default:
         tabController = nil
       }
+      
+      tabControllers.append(tabController)
+    
     }
+    
+    baseController = UITabBarController()
+    baseController!.viewControllers = tabControllers
   }
 
 
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
     // Override point for customization after application launch.
+    
+    createTabs()
+    
+    window?.rootViewController = baseController
+    
     return true
   }
 
