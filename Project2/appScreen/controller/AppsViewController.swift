@@ -40,6 +40,7 @@ class AppsViewController: UIViewController, UITableViewDelegate, UITableViewData
     override func viewDidLoad() {
         super.viewDidLoad()
 
+      edgesForExtendedLayout = UIRectEdge()
       view.backgroundColor = UIColor.cyan
       loadTableOfApps()
     }
@@ -115,7 +116,10 @@ class AppsViewController: UIViewController, UITableViewDelegate, UITableViewData
   }
   
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    print("\(indexPath.row)")
+    
+    let appModel = categories![indexPath.section].apps![indexPath.row]
+    let detail = AppDetailViewController(app: appModel)
+    self.navigationController?.pushViewController(detail, animated: true)
   }
   
     /*

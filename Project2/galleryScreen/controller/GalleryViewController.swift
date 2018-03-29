@@ -15,6 +15,7 @@ class GalleryViewController: UIViewController {
         super.viewDidLoad()
 
       view.backgroundColor = UIColor.yellow
+      edgesForExtendedLayout = UIRectEdge()
       loadIconImage()
         // Do any additional setup after loading the view.
     }

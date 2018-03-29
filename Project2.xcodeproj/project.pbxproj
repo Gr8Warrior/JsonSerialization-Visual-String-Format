@@ -22,6 +22,7 @@
 		4A8A4C1D206CADED00857E8A /* AppsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8A4C1C206CADED00857E8A /* AppsTableViewCell.swift */; };
 		4AFE64B6206CBDB60084E4A1 /* AppCategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFE64B5206CBDB60084E4A1 /* AppCategoryModel.swift */; };
 		4AFE64B8206CC4C40084E4A1 /* AppHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFE64B7206CC4C40084E4A1 /* AppHeaderView.swift */; };
+		4AFE64BE206CF5AB0084E4A1 /* AppDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFE64BD206CF5AB0084E4A1 /* AppDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		4A8A4C1C206CADED00857E8A /* AppsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsTableViewCell.swift; sourceTree = "<group>"; };
 		4AFE64B5206CBDB60084E4A1 /* AppCategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCategoryModel.swift; sourceTree = "<group>"; };
 		4AFE64B7206CC4C40084E4A1 /* AppHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppHeaderView.swift; sourceTree = "<group>"; };
+		4AFE64BD206CF5AB0084E4A1 /* AppDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 		4A8A4BEA206BA5DA00857E8A /* Project2 */ = {
 			isa = PBXGroup;
 			children = (
+				4AFE64B9206CF57F0084E4A1 /* appDetailsScreen */,
 				4A8A4C01206BAA6800857E8A /* appScreen */,
 				4A8A4C09206BAA6800857E8A /* galleryScreen */,
 				4A8A4C05206BAA6800857E8A /* homeScreen */,
@@ -230,6 +233,38 @@
 			path = tabicons;
 			sourceTree = "<group>";
 		};
+		4AFE64B9206CF57F0084E4A1 /* appDetailsScreen */ = {
+			isa = PBXGroup;
+			children = (
+				4AFE64BA206CF57F0084E4A1 /* controller */,
+				4AFE64BB206CF57F0084E4A1 /* model */,
+				4AFE64BC206CF57F0084E4A1 /* view */,
+			);
+			path = appDetailsScreen;
+			sourceTree = "<group>";
+		};
+		4AFE64BA206CF57F0084E4A1 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				4AFE64BD206CF5AB0084E4A1 /* AppDetailViewController.swift */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		4AFE64BB206CF57F0084E4A1 /* model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		4AFE64BC206CF57F0084E4A1 /* view */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -306,6 +341,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4A8A4C15206BAD2E00857E8A /* GalleryViewController.swift in Sources */,
+				4AFE64BE206CF5AB0084E4A1 /* AppDetailViewController.swift in Sources */,
 				4AFE64B8206CC4C40084E4A1 /* AppHeaderView.swift in Sources */,
 				4AFE64B6206CBDB60084E4A1 /* AppCategoryModel.swift in Sources */,
 				4A8A4C1D206CADED00857E8A /* AppsTableViewCell.swift in Sources */,
