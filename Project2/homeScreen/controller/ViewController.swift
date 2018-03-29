@@ -26,7 +26,7 @@ class ViewController: UIViewController {
     
     
     // Step 2.1 : Initialize view with Frame
-    nameLabel = UILabel(frame: CGRect(x: 10, y: 10, width: 300, height: 40))
+    nameLabel = UILabel(frame: CGRect(x: 10, y: 100, width: 300, height: 40))
     
     // Step 2.2 : Associate model with view
     nameLabel?.text = name //model meets vieww inside controller

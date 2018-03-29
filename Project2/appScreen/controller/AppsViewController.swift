@@ -67,7 +67,8 @@ class AppsViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     let app = categories![indexPath.section].apps![indexPath.row]
     cell?.iconImageView?.image = app.icon
-    cell?.nameLabel?.text = app.name!+" \(indexPath.section)"
+    cell?.nameLabel?.text = app.name!+" \(indexPath.section) adfasdfadfad"
+    cell?.nameLabel?.adjustsFontSizeToFitWidth = true
     cell?.publisherNameLabel?.text = app.publisherName
     
     return cell!
@@ -106,8 +107,6 @@ class AppsViewController: UIViewController, UITableViewDelegate, UITableViewData
   
   func didHeaderSelected(_ index: Int) {
     categories![index].isExpand = !categories![index].isExpand!
-    
-    
     tableOfApps?.reloadData()
   }
   

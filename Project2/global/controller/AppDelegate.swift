@@ -22,29 +22,36 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     for i in 0..<3 {
       
       var tabController: UIViewController!
+      var subController: UINavigationController!
       
       switch i {
         
       case 0:
         tabController = ViewController()
-        tabController.tabBarItem.image = UIImage(named: "home")
-        tabController.tabBarItem.title = "Home"
+        subController = UINavigationController(rootViewController: tabController)
+        subController.tabBarItem.image = UIImage(named: "home")
+        subController.tabBarItem.title = "Home"
+        subController.navigationBar.topItem?.title = "Home"
         
       case 1:
         tabController = GalleryViewController()
-        tabController.tabBarItem.image = UIImage(named: "gallery")
-        tabController.tabBarItem.title = "Gallery"
+        subController = UINavigationController(rootViewController: tabController)
+        subController.tabBarItem.image = UIImage(named: "gallery")
+        subController.tabBarItem.title = "Gallery"
+        subController.navigationBar.topItem?.title = "Gallery"
         
       case 2:
         tabController = AppsViewController()
-        tabController.tabBarItem.image = UIImage(named: "apps")
-        tabController.tabBarItem.title = "Apps"
+        subController = UINavigationController(rootViewController: tabController)
+        subController.tabBarItem.image = UIImage(named: "apps")
+        subController.tabBarItem.title = "Apps"
+        subController.navigationBar.topItem?.title = "App List"
         
       default:
         tabController = nil
       }
       
-      tabControllers.append(tabController)
+      tabControllers.append(subController)
     
     }
     
