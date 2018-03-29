@@ -14,12 +14,14 @@ class AppsViewController: UIViewController, UITableViewDelegate, UITableViewData
   var tableOfApps: UITableView?
   var appNames: [String]?
   var apps: [AppModel]?
+  var categories: [AppCategoryModel]?
   
   func loadTableOfApps()  {
     appNames = ["Facebook","Google","Intimetec","Apple","Yahoo","GM","Ferrari","WhatsApps"]
     
     let provider = AppProvider()
     apps = provider.getApps()
+    categories = provider.getAppCategories()
     
     let tableHeight = 500.0
     
@@ -43,7 +45,7 @@ class AppsViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
 
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return (apps?.count)!
+    return (categories![section].apps?.count)!
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -58,8 +60,7 @@ class AppsViewController: UIViewController, UITableViewDelegate, UITableViewData
    // cell?.textLabel?.text = appNames?[indexPath.row] //model meets view
     //cell = UITableView(frame: CGRect(x: 10, y: 10, width: 300, height: 40))
     
-    let app = apps![indexPath.row]
-    
+    let app = categories![indexPath.section].apps![indexPath.row]
     cell?.iconImageView?.image = app.icon
     cell?.nameLabel?.text = app.name!+" \(indexPath.section)"
     cell?.publisherNameLabel?.text = app.publisherName
@@ -72,19 +73,11 @@ class AppsViewController: UIViewController, UITableViewDelegate, UITableViewData
   }
   
   func numberOfSections(in tableView: UITableView) -> Int {
-    return 3
+    return (categories?.count)!
   }
   
   func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-    if section == 0{
-      return "Header 1"
-    } else if section == 1{
-      return "Header 2"
-    } else if section == 2{
-      return "Header 3"
-    } else {
-      return " "
-    }
+    return categories![section].name
   }
     /*
     // MARK: - Navigation
