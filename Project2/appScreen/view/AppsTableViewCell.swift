@@ -14,7 +14,22 @@ class AppsTableViewCell: UITableViewCell {
   var nameLabel: UILabel?
   var publisherNameLabel: UILabel?
   
-    override func awakeFromNib() {
+  override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+    super.init(style: style, reuseIdentifier: reuseIdentifier)
+    
+    iconImageView = UIImageView(frame: CGRect(x: 10, y: 10, width: 60, height: 60))
+    self.addSubview(iconImageView!)
+    nameLabel = UILabel(frame: CGRect(x: 80, y: 10, width: 210, height: 25))
+    self.addSubview(nameLabel!)
+    publisherNameLabel = UILabel(frame: CGRect(x: 80, y: 45, width: 210, height: 25))
+    self.addSubview(publisherNameLabel!)
+  }
+  
+  //Mostly never needed
+  required init?(coder aDecoder: NSCoder) {
+    fatalError("init(coder:) has not been implemented")
+  }
+  override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
