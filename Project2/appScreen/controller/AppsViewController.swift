@@ -40,7 +40,7 @@ class AppsViewController: UIViewController, UITableViewDelegate, UITableViewData
     override func viewDidLoad() {
         super.viewDidLoad()
 
-      view.backgroundColor = UIColor.blue
+      view.backgroundColor = UIColor.cyan
       loadTableOfApps()
     }
 
@@ -76,8 +76,23 @@ class AppsViewController: UIViewController, UITableViewDelegate, UITableViewData
     return (categories?.count)!
   }
   
-  func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-    return categories![section].name
+//  func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+//    return categories![section].name
+//  }
+  
+  func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    var appHeaderView: AppHeaderView?
+    //Frame will get restructured
+    appHeaderView = AppHeaderView(frame: CGRect.zero)
+    let category = categories![section]
+    appHeaderView!.iconImageView!.image = category.iconImage
+    appHeaderView!.nameLabel?.text = category.name
+    
+    return appHeaderView
+  }
+  
+  func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    return 60.0
   }
     /*
     // MARK: - Navigation
