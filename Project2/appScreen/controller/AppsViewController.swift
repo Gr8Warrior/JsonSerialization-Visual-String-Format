@@ -45,7 +45,12 @@ class AppsViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
 
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    
+    if categories![section].isExpand == true {
     return (categories![section].apps?.count)!
+    } else {
+      return 0
+    }
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -84,13 +89,20 @@ class AppsViewController: UIViewController, UITableViewDelegate, UITableViewData
     var appHeaderView: AppHeaderView?
     let category = categories![section]
     //Frame will get restructured
-    appHeaderView?.index = section
-    appHeaderView?.delegate = self
+    
     appHeaderView = AppHeaderView(frame: CGRect.zero)
+    appHeaderView?.index = section
+    
+    appHeaderView?.delegate = self
     appHeaderView!.iconImageView!.image = category.iconImage
     appHeaderView!.nameLabel?.text = category.name
     
     return appHeaderView
+  }
+  
+  func didHeaderSelected(_ index: Int) {
+    categories![index].isExpand = !categories![index].isExpand!
+    tableOfApps?.reloadData()
   }
   
   func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {

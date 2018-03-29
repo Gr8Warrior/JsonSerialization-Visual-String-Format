@@ -13,6 +13,6 @@ class AppCategoryModel: NSObject {
   var iconImage : UIImage?
   var name: String?
   var apps: [AppModel]?
+  var isExpand: Bool?
   
-
 }

@@ -42,6 +42,7 @@ class AppProvider: NSObject {
     cat1.iconImage = UIImage(named: "home")
     cat1.name = "Home Apps "
     cat1.apps = []
+    cat1.isExpand = true
     
     let app1 = AppModel()
     app1.icon = UIImage(named: "home")
@@ -60,6 +61,7 @@ class AppProvider: NSObject {
     cat2.iconImage = UIImage(named: "gallery")
     cat2.name = "Gallery Apps "
     cat2.apps = []
+    cat2.isExpand = false
     
     let app2 = AppModel()
     app2.icon = UIImage(named: "gallery")
@@ -70,6 +72,6 @@ class AppProvider: NSObject {
     categories.append(cat2)
     
     return categories
-    
   }
+  
 }
