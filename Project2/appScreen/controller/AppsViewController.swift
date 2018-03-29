@@ -96,12 +96,18 @@ class AppsViewController: UIViewController, UITableViewDelegate, UITableViewData
     appHeaderView?.delegate = self
     appHeaderView!.iconImageView!.image = category.iconImage
     appHeaderView!.nameLabel?.text = category.name
-    
+    if categories![section].isExpand! {
+      appHeaderView!.nameLabel?.textColor = UIColor.red
+    } else {
+      appHeaderView!.nameLabel?.textColor = UIColor.black
+    }
     return appHeaderView
   }
   
   func didHeaderSelected(_ index: Int) {
     categories![index].isExpand = !categories![index].isExpand!
+    
+    
     tableOfApps?.reloadData()
   }
   
