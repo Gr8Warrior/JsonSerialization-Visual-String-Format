@@ -8,10 +8,16 @@
 
 import UIKit
 
+@objc protocol AppHeaderViewDelegate: NSObjectProtocol {
+  @objc optional func didHeaderSelected(_ index: Int)
+}
 class AppHeaderView: UIView {
 
   var iconImageView: UIImageView?
   var nameLabel: UILabel?
+  var index: Int?
+  
+  weak var delegate: AppHeaderViewDelegate?
   
   override init(frame: CGRect) {
     super.init(frame: frame)
@@ -29,7 +35,15 @@ class AppHeaderView: UIView {
     fatalError("init(coder:) has not been implemented")
   }
   
-    /*
+  override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+    
+    if delegate != nil {
+      //if the delegate func is not required then use this condition
+      if delegate!.responds(to: #selector(AppHeaderViewDelegate.didHeaderSelected(_:))) {
+        delegate!.didHeaderSelected!(index!)
+      }
+    }
+  }    /*
     // Only override draw() if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
     override func draw(_ rect: CGRect) {

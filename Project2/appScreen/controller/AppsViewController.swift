@@ -9,7 +9,7 @@
 // UITableView <------- Array
 import UIKit
 
-class AppsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class AppsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, AppHeaderViewDelegate {
   
   var tableOfApps: UITableView?
   var appNames: [String]?
@@ -82,9 +82,11 @@ class AppsViewController: UIViewController, UITableViewDelegate, UITableViewData
   
   func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
     var appHeaderView: AppHeaderView?
-    //Frame will get restructured
-    appHeaderView = AppHeaderView(frame: CGRect.zero)
     let category = categories![section]
+    //Frame will get restructured
+    appHeaderView?.index = section
+    appHeaderView?.delegate = self
+    appHeaderView = AppHeaderView(frame: CGRect.zero)
     appHeaderView!.iconImageView!.image = category.iconImage
     appHeaderView!.nameLabel?.text = category.name
     
@@ -94,6 +96,11 @@ class AppsViewController: UIViewController, UITableViewDelegate, UITableViewData
   func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
     return 60.0
   }
+  
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    print("\(indexPath.row)")
+  }
+  
     /*
     // MARK: - Navigation
 
