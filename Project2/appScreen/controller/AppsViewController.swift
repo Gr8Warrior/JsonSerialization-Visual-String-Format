@@ -13,17 +13,21 @@ class AppsViewController: UIViewController, UITableViewDelegate, UITableViewData
   
   var tableOfApps: UITableView?
   var appNames: [String]?
+  var apps: [AppModel]?
   
   func loadTableOfApps()  {
     appNames = ["Facebook","Google","Intimetec","Apple","Yahoo","GM","Ferrari","WhatsApps"]
     
-    var tableHeight = 0.0
+    let provider = AppProvider()
+    apps = provider.getApps()
     
-    if Double((appNames?.count)!) * 50.0 > 500.0  {
-      tableHeight = 50.0
-    } else {
-      tableHeight = Double((appNames?.count)!) * 50.0
-    }
+    let tableHeight = 500.0
+    
+//    if Double((appNames?.count)!) * 50.0 > 500.0  {
+//      tableHeight = 50.0
+//    } else {
+//      tableHeight = Double((appNames?.count)!) * 50.0
+//    }
     tableOfApps = UITableView(frame: CGRect(x: 10, y: 10, width: 300, height: tableHeight))
     tableOfApps?.delegate = self
     tableOfApps?.dataSource = self
@@ -39,23 +43,49 @@ class AppsViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
 
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return (appNames?.count)!
+    return (apps?.count)!
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    
-    var cell: UITableViewCell?
-    cell = tableView.dequeueReusableCell(withIdentifier: "cell")
+    //tableView.rowHeight = 100
+    var cell: AppsTableViewCell?
+    cell = tableView.dequeueReusableCell(withIdentifier: "cell") as? AppsTableViewCell
     
     //if let guard let
     if cell == nil {
-      cell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "cell")
+      cell = AppsTableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "cell")
     }
-    cell?.textLabel?.text = appNames?[indexPath.row] //model meets view
+   // cell?.textLabel?.text = appNames?[indexPath.row] //model meets view
     //cell = UITableView(frame: CGRect(x: 10, y: 10, width: 300, height: 40))
+    
+    let app = apps![indexPath.row]
+    
+    cell?.iconImageView?.image = app.icon
+    cell?.nameLabel?.text = app.name!+" \(indexPath.section)"
+    cell?.publisherNameLabel?.text = app.publisherName
+    
     return cell!
   }
 
+  func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    return 80
+  }
+  
+  func numberOfSections(in tableView: UITableView) -> Int {
+    return 3
+  }
+  
+  func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    if section == 0{
+      return "Header 1"
+    } else if section == 1{
+      return "Header 2"
+    } else if section == 2{
+      return "Header 3"
+    } else {
+      return " "
+    }
+  }
     /*
     // MARK: - Navigation
 
