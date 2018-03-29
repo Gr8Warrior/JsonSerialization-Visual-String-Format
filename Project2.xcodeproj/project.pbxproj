@@ -20,6 +20,7 @@
 		4A8A4C19206CAC1600857E8A /* AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8A4C18206CAC1600857E8A /* AppModel.swift */; };
 		4A8A4C1B206CAC7C00857E8A /* AppProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8A4C1A206CAC7C00857E8A /* AppProvider.swift */; };
 		4A8A4C1D206CADED00857E8A /* AppsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8A4C1C206CADED00857E8A /* AppsTableViewCell.swift */; };
+		4AFE64B6206CBDB60084E4A1 /* AppCategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFE64B5206CBDB60084E4A1 /* AppCategoryModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		4A8A4C18206CAC1600857E8A /* AppModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppModel.swift; sourceTree = "<group>"; };
 		4A8A4C1A206CAC7C00857E8A /* AppProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppProvider.swift; sourceTree = "<group>"; };
 		4A8A4C1C206CADED00857E8A /* AppsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsTableViewCell.swift; sourceTree = "<group>"; };
+		4AFE64B5206CBDB60084E4A1 /* AppCategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCategoryModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +140,7 @@
 			children = (
 				4A8A4C18206CAC1600857E8A /* AppModel.swift */,
 				4A8A4C1A206CAC7C00857E8A /* AppProvider.swift */,
+				4AFE64B5206CBDB60084E4A1 /* AppCategoryModel.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -300,6 +303,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4A8A4C15206BAD2E00857E8A /* GalleryViewController.swift in Sources */,
+				4AFE64B6206CBDB60084E4A1 /* AppCategoryModel.swift in Sources */,
 				4A8A4C1D206CADED00857E8A /* AppsTableViewCell.swift in Sources */,
 				4A8A4BEE206BA5DA00857E8A /* ViewController.swift in Sources */,
 				4A8A4C1B206CAC7C00857E8A /* AppProvider.swift in Sources */,

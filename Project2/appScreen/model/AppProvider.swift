@@ -33,4 +33,29 @@ class AppProvider: NSObject {
     
     return apps
   }
+  
+  func getAppCategory() -> [AppCategoryModel] {
+
+    let categories: [AppCategoryModel] = []
+    
+    let cat1 = AppCategoryModel()
+    cat1.iconImage = UIImage(named: "home")
+    cat1.name = "Home Apps "
+    cat1.apps = []
+    
+    let app1 = AppModel()
+    app1.icon = UIImage(named: "home")
+    app1.name = "App 1"
+    app1.publisherName = "Publisher 1"
+    cat1.apps?.append(app1)
+    
+    let app2 = AppModel()
+    app2.icon = UIImage(named: "gallery")
+    app2.name = "App 2"
+    app2.publisherName = "Publisher 2"
+    cat1.apps?.append(app2)
+    
+    return categories
+    
+  }
 }
