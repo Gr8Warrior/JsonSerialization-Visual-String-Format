@@ -22,11 +22,15 @@ import UIKit
 
 class RestServiceViewController: UIViewController {
 
+  var parser: GetUserTypesParser?
+  
     override func viewDidLoad() {
         super.viewDidLoad()
       self.view.backgroundColor = UIColor.white
       edgesForExtendedLayout = UIRectEdge()
-
+      
+      parser = GetUserTypesParser()
+      parser!.getUserTypes()
         // Do any additional setup after loading the view.
     }
 
