@@ -54,6 +54,13 @@ class GetUserTypesParser: NSObject, URLSessionDelegate, URLSessionDownloadDelega
       webData = try Data(contentsOf: location)
       let responseString = String(data: webData!, encoding: String.Encoding.utf8)
       print("responseString \(responseString!)")
+      
+      let result = try JSONSerialization.jsonObject(with: webData!, options: JSONSerialization.ReadingOptions.mutableContainers) as! [String: Any]
+      
+      let status = result["Status"] as! Int
+      if status == 200 {
+        print("success")
+      }
     
     } catch {
       
