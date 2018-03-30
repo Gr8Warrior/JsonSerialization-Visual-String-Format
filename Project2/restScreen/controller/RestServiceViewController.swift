@@ -20,8 +20,8 @@ import UIKit
  http://test.chatongo.in/api/GetUserTypes
 */
 
-class RestServiceViewController: UIViewController {
-
+class RestServiceViewController: UIViewController, GetUserTypesParserDelegate {
+ 
   var parser: GetUserTypesParser?
   
     override func viewDidLoad() {
@@ -30,16 +30,16 @@ class RestServiceViewController: UIViewController {
       edgesForExtendedLayout = UIRectEdge()
       
       parser = GetUserTypesParser()
+      parser?.delegate = self
       parser!.getUserTypes()
+      
         // Do any additional setup after loading the view.
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-
+  func didReceiveUserTypes(_ userTypes: [UserTypeModel]) {
+    print("Shailu \(userTypes.count)")
+  }
+  
     /*
     // MARK: - Navigation
 

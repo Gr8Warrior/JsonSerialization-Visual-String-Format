@@ -17,6 +17,9 @@ import UIKit
 class GetUserTypesParser: NSObject, URLSessionDelegate, URLSessionDownloadDelegate {
   
   var webData: Data?
+  
+  weak var delegate: GetUserTypesParserDelegate?
+  
   //initializing a var using closure
   var session: URLSession {
     
@@ -73,11 +76,18 @@ class GetUserTypesParser: NSObject, URLSessionDelegate, URLSessionDownloadDelega
           userTypes.append(userType)
         }
         
-        print("Count is \(userTypes.count)")
+        if delegate != nil {
+          delegate?.didReceiveUserTypes(userTypes)
+        }
       }
     
     } catch {
-      
+      if delegate != nil {
+        //if this is implemented
+        if delegate!.responds(to: #selector(GetUserTypesParserDelegate.didReceiveError)) {
+          delegate!.didReceiveError!()
+        }
+      }
     }
     
   }
