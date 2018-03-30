@@ -45,15 +45,25 @@ class AutoLayoutViewController: UIViewController {
     viewDictionary!["label3"] = label3
     
     metricDictionary = [:]
+    
+    //for checking whether iPad or iPhone
+    //for checking iphone 4 vs others you'll need to check with screen dimensions
+    if UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiom.pad {
+      metricDictionary!["space"] = 20
+      metricDictionary!["height"] = 80
+    } else {
+      metricDictionary!["space"] = 10
+      metricDictionary!["height"] = 40
+    }
   
     //NSLayoutFormatOptions till date not used
-    self.view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "|-10-[label1]-10-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: viewDictionary!))
+    self.view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "|-space-[label1]-space-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: metricDictionary, views: viewDictionary!))
     
-    self.view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "|-10-[label2]-10-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: viewDictionary!))
+    self.view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "|-space-[label2]-space-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: metricDictionary, views: viewDictionary!))
     
-    self.view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "|-10-[label3]-10-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: viewDictionary!))
+    self.view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "|-space-[label3]-space-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: metricDictionary, views: viewDictionary!))
     
-    self.view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:[label3(40)]-10-[label2(40)]-10-[label1(40)]-10-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: viewDictionary!))
+    self.view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:[label3(height)]-space-[label2(height)]-space-[label1(height)]-space-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: metricDictionary, views: viewDictionary!))
     
     
     
