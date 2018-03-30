@@ -49,5 +49,15 @@ class GetUserTypesParser: NSObject, URLSessionDelegate, URLSessionDownloadDelega
      } catch() {
      }
      */
+    do {
+      
+      webData = try Data(contentsOf: location)
+      let responseString = String(data: webData!, encoding: String.Encoding.utf8)
+      print("responseString \(responseString!)")
+    
+    } catch {
+      
+    }
+    
   }
 }
