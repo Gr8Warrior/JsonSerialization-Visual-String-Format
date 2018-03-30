@@ -8,11 +8,11 @@
 
 import UIKit
 //parser for web service
-class GetUserTypesParser: NSObject, URLSessionDelegate {
-
+class GetUserTypesParser: NSObject, URLSessionDelegate, URLSessionDownloadDelegate {
+  
   var webData: Data?
   //initializing a var using closure
-  var session: URLSession? {
+  var session: URLSession {
     
     let defaultConfig = URLSessionConfiguration.default
     defaultConfig.requestCachePolicy = URLRequest.CachePolicy.reloadIgnoringLocalAndRemoteCacheData
@@ -33,7 +33,13 @@ class GetUserTypesParser: NSObject, URLSessionDelegate {
     
     let url = URL(string: "http://test.chatongo.in/api/GetUserTypes")
 
-    let task = session?.downloadTask(with: url!)
+    let task = session.downloadTask(with: url!)
+    
+    task.resume()
+ 
+  }
   
+  func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask, didFinishDownloadingTo location: URL) {
+    <#code#>
   }
 }
