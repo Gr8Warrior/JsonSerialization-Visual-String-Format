@@ -20,9 +20,11 @@ import UIKit
  http://test.chatongo.in/api/GetUserTypes
 */
 
-class RestServiceViewController: UIViewController, GetUserTypesParserDelegate {
- 
+class RestServiceViewController: UIViewController, GetUserTypesParserDelegate, UITableViewDelegate, UITableViewDataSource {
+
   var parser: GetUserTypesParser?
+  var tableOfUserTypes: UITableView?
+  var userTypes: [UserTypeModel]?
   
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,13 +34,45 @@ class RestServiceViewController: UIViewController, GetUserTypesParserDelegate {
       parser = GetUserTypesParser()
       parser?.delegate = self
       parser!.getUserTypes()
-      
-        // Do any additional setup after loading the view.
+
     }
 
+  func loadTableOfUserTypes(){
+      tableOfUserTypes = UITableView(frame: self.view.frame)
+      tableOfUserTypes?.dataSource = self
+      tableOfUserTypes?.delegate = self
+      self.view.addSubview(tableOfUserTypes!)
+      self.tableOfUserTypes?.reloadData()
+  }
+  
   func didReceiveUserTypes(_ userTypes: [UserTypeModel]) {
     print("Shailu \(userTypes.count)")
+    self.userTypes = userTypes
+    loadTableOfUserTypes()
   }
+  
+  
+  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    return userTypes?.count ?? 0
+  }
+  
+  func numberOfSections(in tableView: UITableView) -> Int {
+    return 1
+  }
+  
+  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    var cell = tableView.dequeueReusableCell(withIdentifier: "user")
+    
+    if cell == nil {
+      cell = UITableViewCell.init(style: UITableViewCellStyle.subtitle, reuseIdentifier: "user")
+    }
+    let user = userTypes![indexPath.row]
+    cell?.textLabel?.text = user.UserTypeName
+    cell?.detailTextLabel?.text = user.UserTypeId
+    
+    return cell!
+  }
+  
   
     /*
     // MARK: - Navigation

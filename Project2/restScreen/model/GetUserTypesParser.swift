@@ -75,17 +75,20 @@ class GetUserTypesParser: NSObject, URLSessionDelegate, URLSessionDownloadDelega
           let userType = UserTypeModel(dictionary: data[i])
           userTypes.append(userType)
         }
-        
-        if delegate != nil {
-          delegate?.didReceiveUserTypes(userTypes)
+        DispatchQueue.main.async {
+          if self.delegate != nil {
+            self.delegate?.didReceiveUserTypes(userTypes)
+          }
         }
       }
     
     } catch {
-      if delegate != nil {
-        //if this is implemented
-        if delegate!.responds(to: #selector(GetUserTypesParserDelegate.didReceiveError)) {
-          delegate!.didReceiveError!()
+      DispatchQueue.main.async {
+        if self.delegate != nil {
+          //if this is implemented
+          if self.delegate!.responds(to: #selector(GetUserTypesParserDelegate.didReceiveError)) {
+          self.delegate!.didReceiveError!()
+          }
         }
       }
     }
