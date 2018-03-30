@@ -39,6 +39,12 @@ class AutoLayoutViewController: UIViewController {
     //Before setting a constraint add the view to the parent view
     view.addSubview(label3!)
     
+    viewDictionary = [:]
+    metricDictionary = [:]
+  
+    //NSLayoutFormatOptions till date not used
+    self.view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: viewDictionary!))
+  
   }
   
   /*
