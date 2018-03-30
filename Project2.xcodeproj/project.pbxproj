@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4A4E13F6206E0D03001DD719 /* RestServiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4E13F5206E0D03001DD719 /* RestServiceViewController.swift */; };
 		4A4E13F8206E0F71001DD719 /* GetUserTypesParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4E13F7206E0F71001DD719 /* GetUserTypesParser.swift */; };
+		4A4E13FA206E2E42001DD719 /* UserTypeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4E13F9206E2E42001DD719 /* UserTypeModel.swift */; };
 		4A8A4BEC206BA5DA00857E8A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8A4BEB206BA5DA00857E8A /* AppDelegate.swift */; };
 		4A8A4BEE206BA5DA00857E8A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8A4BED206BA5DA00857E8A /* ViewController.swift */; };
 		4A8A4BF1206BA5DA00857E8A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A8A4BEF206BA5DA00857E8A /* Main.storyboard */; };
@@ -31,6 +32,7 @@
 /* Begin PBXFileReference section */
 		4A4E13F5206E0D03001DD719 /* RestServiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestServiceViewController.swift; sourceTree = "<group>"; };
 		4A4E13F7206E0F71001DD719 /* GetUserTypesParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUserTypesParser.swift; sourceTree = "<group>"; };
+		4A4E13F9206E2E42001DD719 /* UserTypeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTypeModel.swift; sourceTree = "<group>"; };
 		4A8A4BE8206BA5DA00857E8A /* Project2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Project2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A8A4BEB206BA5DA00857E8A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4A8A4BED206BA5DA00857E8A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				4A4E13F7206E0F71001DD719 /* GetUserTypesParser.swift */,
+				4A4E13F9206E2E42001DD719 /* UserTypeModel.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -425,6 +428,7 @@
 				4A4E13F6206E0D03001DD719 /* RestServiceViewController.swift in Sources */,
 				4A8A4C19206CAC1600857E8A /* AppModel.swift in Sources */,
 				4A8A4BEC206BA5DA00857E8A /* AppDelegate.swift in Sources */,
+				4A4E13FA206E2E42001DD719 /* UserTypeModel.swift in Sources */,
 				4A902A66206DFB98000B6DCE /* AutoLayoutViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
