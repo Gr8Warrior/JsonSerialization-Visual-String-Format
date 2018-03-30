@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var tabControllers: [UIViewController] = []
     
     //... is full range or ..> or ..< is half range
-    for i in 0..<4 {
+    for i in 0..<5 {
       
       var tabController: UIViewController!
       var subController: UINavigationController!
@@ -53,6 +53,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         subController.tabBarItem.image = UIImage(named: "apps")
         subController.tabBarItem.title = "AutoLayout"
         subController.navigationBar.topItem?.title = "Autolayout"
+      
+      case 4:
+        tabController = RestServiceViewController()
+        subController = UINavigationController(rootViewController: tabController)
+        subController.tabBarItem.image = UIImage(named: "gallery")
+        subController.tabBarItem.title = "RestService"
+        subController.navigationBar.topItem?.title = "Rest Web Service"
         
       default:
         tabController = nil

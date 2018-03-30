@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4A4E13F6206E0D03001DD719 /* RestServiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4E13F5206E0D03001DD719 /* RestServiceViewController.swift */; };
 		4A8A4BEC206BA5DA00857E8A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8A4BEB206BA5DA00857E8A /* AppDelegate.swift */; };
 		4A8A4BEE206BA5DA00857E8A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8A4BED206BA5DA00857E8A /* ViewController.swift */; };
 		4A8A4BF1206BA5DA00857E8A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A8A4BEF206BA5DA00857E8A /* Main.storyboard */; };
@@ -27,6 +28,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4A4E13F5206E0D03001DD719 /* RestServiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestServiceViewController.swift; sourceTree = "<group>"; };
 		4A8A4BE8206BA5DA00857E8A /* Project2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Project2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A8A4BEB206BA5DA00857E8A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4A8A4BED206BA5DA00857E8A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -59,6 +61,38 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4A4E13F1206E0CF3001DD719 /* restScreen */ = {
+			isa = PBXGroup;
+			children = (
+				4A4E13F2206E0CF3001DD719 /* controller */,
+				4A4E13F3206E0CF3001DD719 /* model */,
+				4A4E13F4206E0CF3001DD719 /* view */,
+			);
+			path = restScreen;
+			sourceTree = "<group>";
+		};
+		4A4E13F2206E0CF3001DD719 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				4A4E13F5206E0D03001DD719 /* RestServiceViewController.swift */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		4A4E13F3206E0CF3001DD719 /* model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		4A4E13F4206E0CF3001DD719 /* view */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
 		4A8A4BDF206BA5DA00857E8A = {
 			isa = PBXGroup;
 			children = (
@@ -78,6 +112,7 @@
 		4A8A4BEA206BA5DA00857E8A /* Project2 */ = {
 			isa = PBXGroup;
 			children = (
+				4A4E13F1206E0CF3001DD719 /* restScreen */,
 				4A902A61206DFB86000B6DCE /* AutoLayoutScreen */,
 				4AFE64B9206CF57F0084E4A1 /* appDetailsScreen */,
 				4A8A4C01206BAA6800857E8A /* appScreen */,
@@ -383,6 +418,7 @@
 				4A8A4BEE206BA5DA00857E8A /* ViewController.swift in Sources */,
 				4A8A4C1B206CAC7C00857E8A /* AppProvider.swift in Sources */,
 				4A8A4C17206BAD4700857E8A /* AppsViewController.swift in Sources */,
+				4A4E13F6206E0D03001DD719 /* RestServiceViewController.swift in Sources */,
 				4A8A4C19206CAC1600857E8A /* AppModel.swift in Sources */,
 				4A8A4BEC206BA5DA00857E8A /* AppDelegate.swift in Sources */,
 				4A902A66206DFB98000B6DCE /* AutoLayoutViewController.swift in Sources */,
