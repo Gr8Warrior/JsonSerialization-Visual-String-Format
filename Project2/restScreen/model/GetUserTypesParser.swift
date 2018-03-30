@@ -59,6 +59,20 @@ class GetUserTypesParser: NSObject, URLSessionDelegate, URLSessionDownloadDelega
       
       let status = result["Status"] as! Int
       if status == 200 {
+        let data = result["data"] as! [[String: Any]]
+        
+        for i in 0..<data.count {
+          let jsonObject = data[i]
+          
+          let userId = jsonObject["UserTypeId"]! as! String
+          let userTypeName = jsonObject["UserTypeName"]! as! String
+          let tax = jsonObject["Tax"]! as! Int
+          
+          print("\(userId)")
+          print("\(userTypeName)")
+          print("\(tax)")
+        }
+        
         print("success")
       }
     
