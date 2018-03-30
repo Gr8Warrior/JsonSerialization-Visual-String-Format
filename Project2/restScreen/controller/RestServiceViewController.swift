@@ -9,13 +9,15 @@
 import UIKit
 
 /*
- 1. Create an agent (model) class
+ 1. Create an agent (model) class (1 agent for 1 web service)
  2. Implement agent purpose
   2.1 get the data from the server
   2.2 process the server
  3. create a container(Optional)
  4. Create a pure model class or classes(optional)
  5. Implement feedback mechanism
+ 
+ http://test.chatongo.in/api/GetUserTypes
 */
 
 class RestServiceViewController: UIViewController {
