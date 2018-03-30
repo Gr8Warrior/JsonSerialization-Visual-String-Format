@@ -40,6 +40,14 @@ class GetUserTypesParser: NSObject, URLSessionDelegate, URLSessionDownloadDelega
   }
   
   func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask, didFinishDownloadingTo location: URL) {
-    <#code#>
+    /*
+     do {
+        try stmt1
+        stmt2
+        stmt3
+        try stmt4
+     } catch() {
+     }
+     */
   }
 }
