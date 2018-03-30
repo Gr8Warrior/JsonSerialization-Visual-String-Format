@@ -7,6 +7,12 @@
 //
 
 import UIKit
+
+@objc protocol GetUserTypesParserDelegate: NSObjectProtocol{
+  func didReceiveUserTypes(_ userTypes: [UserTypeModel])
+  @objc optional func didReceiveError()
+}
+
 //parser for web service
 class GetUserTypesParser: NSObject, URLSessionDelegate, URLSessionDownloadDelegate {
   
