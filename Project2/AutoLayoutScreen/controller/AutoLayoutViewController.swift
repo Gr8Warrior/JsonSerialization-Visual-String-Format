@@ -40,11 +40,23 @@ class AutoLayoutViewController: UIViewController {
     view.addSubview(label3!)
     
     viewDictionary = [:]
+    viewDictionary!["label1"] = label1
+    viewDictionary!["label2"] = label2
+    viewDictionary!["label3"] = label3
+    
     metricDictionary = [:]
   
     //NSLayoutFormatOptions till date not used
-    self.view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: viewDictionary!))
-  
+    self.view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "|-10-[label1]-10-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: viewDictionary!))
+    
+    self.view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "|-10-[label2]-10-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: viewDictionary!))
+    
+    self.view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "|-10-[label3]-10-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: viewDictionary!))
+    
+    self.view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:[label3(40)]-10-[label2(40)]-10-[label1(40)]-10-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: viewDictionary!))
+    
+    
+    
   }
   
   /*
