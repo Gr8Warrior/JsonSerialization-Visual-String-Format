@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var tabControllers: [UIViewController] = []
     
     //... is full range or ..> or ..< is half range
-    for i in 0..<3 {
+    for i in 0..<4 {
       
       var tabController: UIViewController!
       var subController: UINavigationController!
@@ -46,6 +46,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         subController.tabBarItem.image = UIImage(named: "apps")
         subController.tabBarItem.title = "Apps"
         subController.navigationBar.topItem?.title = "App List"
+        
+      case 3:
+        tabController = AutoLayoutViewController()
+        subController = UINavigationController(rootViewController: tabController)
+        subController.tabBarItem.image = UIImage(named: "apps")
+        subController.tabBarItem.title = "AutoLayout"
+        subController.navigationBar.topItem?.title = "Autolayout"
         
       default:
         tabController = nil
